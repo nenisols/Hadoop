@@ -1,0 +1,228 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>DataWebService</groupId>
+  <artifactId>DataWebService</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.1.RELEASE</version>
+    </parent>
+  <properties>
+        <java.version>1.8</java.version>
+        <kafka.hortonworks.version>0.9.0.2.3.4.0-3485</kafka.hortonworks.version>
+		<spark.hortonworks.version>1.5.2.2.3.4.0-3485</spark.hortonworks.version>
+		<storm.hortonworks.version>0.10.0.2.3.4.0-3485</storm.hortonworks.version>
+		<scala.version>2.10</scala.version>
+    </properties>
+  <dependencies>
+  		<!-- <dependency>
+			<groupId>com.webmethods.jms</groupId>
+			<artifactId>wm-brokerclient</artifactId>
+			<version>8.2.3</version>
+			<scope>provided</scope>
+		</dependency> -->
+	<!--	<dependency>
+     <groupId>jdk.tools</groupId>
+    <artifactId>jdk.tools</artifactId>
+    <version>1.8.0_91</version>
+    <scope>system</scope>
+    <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath> 
+</dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-messaging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>sockjs-client</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>stomp-websocket</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        
+        <!-- <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-broker</artifactId>
+        </dependency>
+        
+		<dependency>
+		    <groupId>javax.jms</groupId>
+		    <artifactId>jms</artifactId>
+		    <version>1.1</version>
+		</dependency>
+        <dependency>
+        	<groupId>wm-brokerclient</groupId>
+        	<artifactId>wm-brokerclient</artifactId>
+        	<version>8.2.3</version>
+        	<scope>system</scope>
+        	<systemPath>${basedir}\src\lib\wm-brokerclient-8.2.3.jar</systemPath>        	
+        </dependency>
+        <dependency>
+        	<groupId>wm-g11nutils</groupId>
+        	<artifactId>wm-brokerclient</artifactId>
+        	<version>8.2.2.4</version>
+        	<scope>system</scope>
+        	<systemPath>${basedir}\src\lib\wm-g11nutils-8.2.2.4.jar</systemPath>        	
+        </dependency>
+        <dependency>
+        	<groupId>wm-jmsclient</groupId>
+        	<artifactId>wm-jmsclient</artifactId>
+        	<version>8.2.2.0</version>
+        	<scope>system</scope>
+        	<systemPath>${basedir}\src\lib\wm-jmsclient-8.2.2.0.jar</systemPath>        	
+        </dependency>
+        <dependency>
+        	<groupId>wm-jmsnaming</groupId>
+        	<artifactId>wm-jmsnaming</artifactId>
+        	<version>8.2.2</version>
+        	<scope>system</scope>
+        	<systemPath>${basedir}\src\lib\wm-jmsnaming-8.2.2.jar</systemPath>        	
+        </dependency>
+       https://mvnrepository.com/artifact/org.apache.hive/hive-jdbc
+		<dependency>
+		    <groupId>org.apache.hive</groupId>
+		    <artifactId>hive-jdbc</artifactId>
+		    <version>1.2.1</version>
+		</dependency> -->
+      <dependency>
+	    <groupId>org.apache.kafka</groupId>
+	    <artifactId>kafka_${scala.version}</artifactId>
+	    <version>0.9.0.1</version>
+	    <!-- <scope>system</scope>
+    	<systemPath>${basedir}\src\lib\kafka_2.10-0.9.0.2.3.4.0-3485.jar</systemPath> -->
+    	<exclusions>
+		  <exclusion> 
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-log4j12</artifactId>
+		  </exclusion>
+		  <exclusion> 
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		  </exclusion>
+		</exclusions> 
+	</dependency>
+    
+  	<dependency>
+	    <groupId>org.apache.kafka</groupId>
+	    <artifactId>kafka-clients</artifactId>
+	    <version>0.9.0.1</version>
+	    <!-- <scope>system</scope>
+    	<systemPath>${basedir}\src\lib\kafka-clients-0.9.0.2.3.4.0-3485.jar</systemPath> -->
+	</dependency>
+     <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+<!-- <dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-all</artifactId>
+    <version>1.8.4</version>
+</dependency>
+https://mvnrepository.com/artifact/javax.validation/validation-api
+<dependency>
+    <groupId>javax.validation</groupId>
+    <artifactId>validation-api</artifactId>
+    <version>1.0.0.GA</version>
+</dependency> -->
+
+     
+    </dependencies>
+    
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <!-- <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin> -->
+      <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+    <artifactId>maven-resources-plugin</artifactId>
+    <version>2.6</version><!-- $NO-MVN-MAN-VER$ -->
+    <executions>
+        <execution>
+            <id>copy-resources</id>
+            <phase>validate</phase>
+            <goals>
+                <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+                <outputDirectory>${basedir}/target/classes/static</outputDirectory>
+                <resources>
+                    <resource>
+                        <directory>src/main/webapp</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
+            </configuration>
+        </execution>    
+
+    </executions>
+</plugin>
+    </plugins>
+  </build>
+  <!-- <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories> -->
+</project>

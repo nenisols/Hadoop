@@ -1,0 +1,14 @@
+hdp\test\GreetingsController.class
+hdp\test\KDataService.class
+hdp\test\Greeting.class
+hdp\WebSocketConfig.class
+hdp\test\KafkaMsg.class
+hdp\websocket\test\ApiResponse.class
+hdp\test\KafkaMsgProducer.class
+hdp\test\KafkaMsgConsumer$1HandleRebalance.class
+hdp\Application.class
+hdp\websocket\test\ApiController.class
+hdp\test\KafkaMsgConsumer.class
+hdp\test\MainController.class
+hdp\websocket\test\ApiMsg.class
+hdp\test\StringResponse.class

@@ -1,0 +1,109 @@
+<html lang="en" ng-app="hdpconsoleApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Hadoop Console Application</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">    
+
+    <!-- Custom styles for this template -->
+    
+    <link href="../../css/dashboard.css" rel="stylesheet">    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="../../node_modules/angular-route/angular-route.js"></script>
+    <script src="../../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+    
+    
+    
+    <!-- application script files -->
+    <script src="../../app/app.js"></script>
+    <!-- <script src="../../config/baseconfig.js"></script>
+    <script src="../../controllers/TopicController.js"></script>
+    <script src="../../controllers/DatabaseCtrl.js"></script>
+    
+    -->
+    <script src="../../controllers/KafkaCtrl.js"></script>
+    <script src="../../controllers/SparkCtrl.js"></script> 
+    <script src="../../controllers/OverviewCtrl.js"></script>
+    <script src="../../controllers/MainCtrl.js"></script>
+    
+    
+<!--     <script src="../../providers/Environment.js"></script> -->
+    
+<!--     <script src="../../providers/EnvironmentProvider.js"></script> -->
+     
+<!--    <script src="../../services/ConsumerService.js"></script> -->
+    
+<!--     <script src="../../services/ProducerService.js"></script> -->
+    
+    <script src="../../services/TopicService.js"></script>
+    
+  </head>
+
+  <body>
+    
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Hadoop Console Application-234</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid" >
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a ui-sref="overview">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a ui-sref="kafka">Kafka</a></li>
+            <li><a ui-sref="spark">Spark</a></li>
+            <li><a ui-sref="database">Database</a></li>
+          </ul>          
+        </div>
+        <div ui-view></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    
+    
+    
+  </body>
+</html>
